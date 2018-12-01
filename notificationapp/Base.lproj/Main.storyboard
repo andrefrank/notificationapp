@@ -26,11 +26,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-St-IQl">
-                                <rect key="frame" x="150" y="411" width="74" height="30"/>
+                                <rect key="frame" x="125" y="412" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start timer"/>
+                                <state key="normal" title="Show available"/>
                                 <connections>
-                                    <action selector="pressedTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Egu-L4-wSO"/>
+                                    <action selector="toggleShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tk0-Ju-F2p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWL-OH-Tgs">
+                                <rect key="frame" x="110" y="147" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enable background Mode"/>
+                                <connections>
+                                    <action selector="toggleBackgroundMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SI2-2U-SBm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,10 +47,13 @@
                     </view>
                     <connections>
                         <outlet property="textFiel" destination="3NL-2C-pGA" id="qI8-4U-1Sb"/>
+                        <outlet property="toggleBackgroundModeButton" destination="mWL-OH-Tgs" id="tDR-fB-wOZ"/>
+                        <outlet property="toggleShowButton" destination="jLy-St-IQl" id="mYo-T2-DQI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="128.18590704647679"/>
         </scene>
     </scenes>
 </document>

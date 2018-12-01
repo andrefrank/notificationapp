@@ -27,6 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        //Terminate background work when flag is cleared
+//        if !LocalPushManager.shared.skipp{
+//            LocalPushManager.shared.backgroundMode_Fetch(enable: false)
+//        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -39,6 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        //We are awake-> Do the job
+        LocalPushManager.shared.background_Fetch(fetched:true)
+        completionHandler(UIBackgroundFetchResult.newData)
     }
 
 
