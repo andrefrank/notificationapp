@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textFiel: UITextField!
+    
+    var noti = LocalPushManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        LocalPushManager.shared.requestPermission()
+        LocalPushManager.shared.sendLocalPush(in: 60)
     }
 
 
+    @IBAction func pressedTimer(_ sender: Any) {
+        noti.skipp.toggle()
+        print(noti.skipp)
+        
+    }
 }
 
