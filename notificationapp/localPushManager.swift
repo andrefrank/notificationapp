@@ -68,7 +68,7 @@ class LocalPushManager: NSObject {
     func background_Fetch(fetched:Bool){
         //Do something within 30 seconds before IOS blocks the call
         
-        if _backingSkip{
+        if fetched{
             center.add(self.newShowAvailableRequest) { (error) in
                 if error==nil{
                     print("Notification request added")
